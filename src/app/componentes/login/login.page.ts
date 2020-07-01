@@ -39,9 +39,15 @@ export class LoginPage implements OnInit {
   }
 
   onSubmitLogin(){
+    if(this.email=="Admin@Admin.com"){
     this.authService.login(this.email,this.password).then(res=>{
       this.router.navigate(['principal'])
     }).catch(err => this.presentAlert());
+    } else{
+      this.authService.login(this.email,this.password).then(res=>{
+        this.router.navigate(['principaluser'])
+      }).catch(err => this.presentAlert());
+    }
   }
 
 }

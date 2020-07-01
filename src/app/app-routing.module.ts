@@ -17,16 +17,24 @@ const routes: Routes = [
   },
   {
     path: 'principal',
-    loadChildren: () => import('./componentes/principal/principal.module').then( m => m.PrincipalPageModule)
+    loadChildren: () => import('./componentes/AdminHome/principal.module').then( m => m.PrincipalPageModule)
   },
   {
     path: 'registro',
     loadChildren: () => import('./componentes/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'principal',
-    loadChildren: () => import('./componentes/principal/principal.module').then( m => m.PrincipalPageModule)
+    path: 'principaluser',
+    loadChildren: () => import('./componentes/VoluntarioHome/principal-user.module').then( m => m.PrincipalUserPageModule)
+  },  {
+    path: 'evento',
+    loadChildren: () => import('./componentes/evento/evento.module').then( m => m.EventoPageModule)
   },
+  {
+    path: 'crudevento',
+    loadChildren: () => import('./componentes/crudevento/crudevento.module').then( m => m.CRUDeventoPageModule)
+  },
+
 ];
 
 @NgModule({
