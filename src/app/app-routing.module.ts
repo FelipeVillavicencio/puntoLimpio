@@ -26,13 +26,22 @@ const routes: Routes = [
   {
     path: 'principaluser',
     loadChildren: () => import('./componentes/VoluntarioHome/principal-user.module').then( m => m.PrincipalUserPageModule)
-  },  {
+  },
+  {
     path: 'evento',
     loadChildren: () => import('./componentes/evento/evento.module').then( m => m.EventoPageModule)
   },
   {
     path: 'crudevento',
     loadChildren: () => import('./componentes/crudevento/crudevento.module').then( m => m.CRUDeventoPageModule)
+  },
+  {
+    path: 'recursos',
+    loadChildren: () => import('./componentes/recursos/recursos.module').then( m => m.RecursosPageModule)
+  },
+  {
+    path: 'crudrecurso',
+    loadChildren: () => import('./componentes/crudrecurso/crudrecurso.module').then( m => m.CrudrecursoPageModule)
   },
 
 ];
