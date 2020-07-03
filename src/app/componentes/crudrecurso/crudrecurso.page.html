@@ -1,29 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>crudrecurso</ion-title>
+    <ion-title>Crear Recursos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="myForm">
-    <ion-item>
-      <ion-label stacked>Nombre:</ion-label>
-      <ion-input formControlName="nombre" type="text" placeholder="nombre"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>tipo:</ion-label>
-      <ion-input formControlName="tipo" type="text" placeholder="tipo"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Descripcion:</ion-label>
-      <ion-input formControlName="descripcion" type="text" placeholder="descripcion"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Cantidad:</ion-label>
-      <ion-input formControlName="cantidad" type="text" placeholder="cantidad"></ion-input>
-    </ion-item>
-  <div padding>
-    <button ion-button block type="submit" [disabled]="!myForm.valid">Crear</button>
-  </div>
-</form>
+  <ion-item>
+    <ion-label stacked>Nombre:</ion-label>
+    <ion-input [(ngModel)]="recurso.nombre" type="text" placeholder="nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>tipo:</ion-label>
+    <ion-input [(ngModel)]="recurso.tipo" type="text" placeholder="tipo"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Cantidad:</ion-label>
+    <ion-input [(ngModel)]="recurso.cantidad" type="text" placeholder="cantidad"></ion-input>
+  </ion-item>
+<div padding>
+  <ion-button (click)="fCantidad()"  type="submit">Guardar</ion-button>
+  <ion-button (click)="fCantidad()" type="submit">ver</ion-button>
+</div>
 </ion-content>
