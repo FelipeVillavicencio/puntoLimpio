@@ -4,6 +4,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ion-list lines="full">
+    
+      <ion-item *ngIf="evento">
+        <ion-input required type="text" placeholder="Nombre" [(ngModel)]="evento.Nombre"></ion-input>
+      </ion-item>         
+      <ion-item *ngIf="evento">
+        <ion-input required type="text" placeholder="Fecha" [(ngModel)]="evento.Fecha"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="evento">
+        <ion-input required type="text" placeholder="Lugar" [(ngModel)]="evento.Lugar"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="evento">
+        <ion-input required type="text" placeholder="Hora" [(ngModel)]="evento.Hora"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="evento">
+        <ion-input required type="text" placeholder="Descripción" [(ngModel)]="evento.Desc"></ion-input>
+      </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveEvento()">Guardar</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed"color="danger">
+    <ion-fab-button color="danger" routerLink="/evento" routerDirection="forward" (click)="onRemove(eventoId)">
+    <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

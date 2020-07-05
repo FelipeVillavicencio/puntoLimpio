@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: () => import('./componentes/evento/evento.module').then( m => m.EventoPageModule)
   },
   {
+    path: 'crudevento/:id',
+    loadChildren: () => import('./componentes/crudevento/crudevento.module').then( m => m.CRUDeventoPageModule)
+  },
+  {
     path: 'crudevento',
     loadChildren: () => import('./componentes/crudevento/crudevento.module').then( m => m.CRUDeventoPageModule)
   },
