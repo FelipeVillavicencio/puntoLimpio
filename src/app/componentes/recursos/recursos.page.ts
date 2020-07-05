@@ -23,4 +23,20 @@ cargarRecursos(){
     });
   });
 }
+eliminarRecursos(id){
+  this.recursoS.eliminarRecursos(id);
+}
+editarRecurso(recurso: any){
+this.recursoS.cargarRecurso(recurso);
+}
+uso(recuso){
+const recurso = 
+  {
+    id: recuso.id,
+    nombre: recuso.nombre,
+    tipo: recuso.tipo,
+    uso : true
+  }
+this.recursoS.cargarRecurso(recurso);
+}
 }

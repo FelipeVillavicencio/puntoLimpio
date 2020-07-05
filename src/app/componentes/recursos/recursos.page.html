@@ -5,11 +5,32 @@
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let recurso of recursos">
-    <ion-label stacked>{{recurso.nombre}}</ion-label>
-    <ion-label stacked>{{recurso.tipo}}</ion-label>
-    <ion-label stacked>{{recurso.uso}}</ion-label>
-  </ion-item>
-  
+  <ion-list>
+    <ion-item *ngFor="let recurso of recursos">
+      
+        <ion-label>
+          <h2>{{recurso.nombre}}</h2>
+          <p>{{recurso.tipo}}</p>
+        </ion-label>
+      <ion-buttons>
+        <ion-icon (click)="eliminarRecursos(recurso.id)" slot="icon-only" name="trash-outline"></ion-icon>
+        <ion-icon (click)="editarRecursos(recurso.id)" slot="icon-only" name="brush-outline"></ion-icon>
+      </ion-buttons>
+      
+     
+    </ion-item>
+  </ion-list>
   
 </ion-content>
+
+<!--ion-label *ngIf="recurso.uso">
+  <p>en uso</p>
+</ion-label>
+
+<ion-label *ngIf="!recurso.uso">
+  <p>no uso</p>
+</ion-label>
+
+<ion-button >eliminar</ion-button>
+<ion-button (click)="editarRecurso(recurso)">editar</ion-button>
+<ion-button (click)="uso(recurso)">usar</ion-button-->

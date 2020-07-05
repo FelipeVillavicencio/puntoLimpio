@@ -13,10 +13,13 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^10.0.2",
+    "@angular/cdk": "^10.0.1",
     "@angular/common": "~9.1.6",
     "@angular/core": "~9.1.6",
     "@angular/fire": "^6.0.0",
     "@angular/forms": "~9.1.6",
+    "@angular/material": "^10.0.1",
     "@angular/platform-browser": "~9.1.6",
     "@angular/platform-browser-dynamic": "~9.1.6",
     "@angular/router": "~9.1.6",
@@ -26,6 +29,7 @@
     "@ionic/angular": "^5.0.0",
     "firebase": "^7.15.0",
     "rxjs": "~6.5.1",
+    "sweetalert2": "^9.15.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

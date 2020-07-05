@@ -10,7 +10,8 @@ export class CrudrecursoPage implements OnInit {
   recurso = {
           nombre: '',
           tipo: '',
-          cantidad: 0
+          cantidad: 0,
+          uso : false
         };
 
 
@@ -21,9 +22,7 @@ export class CrudrecursoPage implements OnInit {
   }
 
   subirRecursos(){
-    this.recursoS.cargarRecurso(this.recurso).then(() => {
-      alert('ta wena la wuea')
-    } );
+    this.recursoS.cargarRecurso(this.recurso);
   }
   ver(){
     console.log(this.recurso)
