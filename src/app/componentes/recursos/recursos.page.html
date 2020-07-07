@@ -11,10 +11,11 @@
         <ion-label>
           <h2>{{recurso.nombre}}</h2>
           <p>{{recurso.tipo}}</p>
+         
         </ion-label>
       <ion-buttons>
         <ion-icon (click)="eliminarRecursos(recurso.id)" slot="icon-only" name="trash-outline"></ion-icon>
-        <ion-icon (click)="editarRecursos(recurso.id)" slot="icon-only" name="brush-outline"></ion-icon>
+        <ion-icon (click)="editarRecurso(recurso)" slot="icon-only" name="brush-outline"></ion-icon>
       </ion-buttons>
       
      

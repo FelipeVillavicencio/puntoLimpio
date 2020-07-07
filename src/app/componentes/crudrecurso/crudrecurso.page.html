@@ -7,18 +7,22 @@
 <ion-content>
   <ion-item>
     <ion-label stacked>Nombre:</ion-label>
-    <ion-input [(ngModel)]="recurso.nombre" type="text" placeholder="nombre"></ion-input>
+    <ion-input required [(ngModel)]="recurso.nombre" type="text" placeholder="nombre"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label stacked>tipo:</ion-label>
-    <ion-input [(ngModel)]="recurso.tipo" type="text" placeholder="tipo"></ion-input>
+    <ion-input required [(ngModel)]="recurso.tipo" type="text" placeholder="tipo"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label stacked>Cantidad:</ion-label>
-    <ion-input [(ngModel)]="recurso.cantidad" type="text" placeholder="cantidad"></ion-input>
+    <ion-input required [(ngModel)]="recurso.cantidad" type="text" placeholder="cantidad"></ion-input>
   </ion-item>
 <div padding>
   <ion-button (click)="fCantidad()"  type="submit">Guardar</ion-button>
-  <ion-button (click)="fCantidad()" type="submit">ver</ion-button>
 </div>
+<div padding>
+  <ion-button class="secundario" href="recursos">Listar Recursos</ion-button>
+</div>
+    
+ 
 </ion-content>

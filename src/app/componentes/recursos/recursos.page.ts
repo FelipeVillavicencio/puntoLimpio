@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecursosService } from '../../servicios/recursos.service';
+import Swal from 'sweetalert2';
+import { SweetSService } from '../../servicios/sweet-s.service';
 
 @Component({
   selector: 'app-recursos',
@@ -8,7 +10,8 @@ import { RecursosService } from '../../servicios/recursos.service';
 })
 export class RecursosPage implements OnInit {
 recursos = [];
-  constructor(private recursoS: RecursosService) { }
+  constructor(private recursoS: RecursosService,
+              private alertaSweet: SweetSService) { }
 
   ngOnInit() {
     this.cargarRecursos();
@@ -28,6 +31,7 @@ eliminarRecursos(id){
 }
 editarRecurso(recurso: any){
 this.recursoS.cargarRecurso(recurso);
+
 }
 uso(recuso){
 const recurso = 
