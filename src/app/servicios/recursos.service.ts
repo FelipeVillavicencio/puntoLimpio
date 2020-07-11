@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -26,7 +27,22 @@ obtenerRecursos(){
 }
 
 eliminarRecursos(id){
-  return this.aFire.collection('recursos').doc(id).delete();
+  Swal.fire({
+    title: '¿Estas seguro que deseas eliminar?',
+    text: `esta accion no se podra revertir!`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, Deseo eliminarlo!'
+  }).then(result => {
+    if (result.value) {
+      this.aFire.collection('recursos').doc(id).delete();
+      Swal.fire('Eliminado!', 'el recurso ha sido eliminado.', 'success');
+    }else{
+      Swal.fire('Cancelado', 'No se ha eliminado', 'error');
+    }
+  });
 }
 
 

@@ -1,0 +1,28 @@
+<ion-card>
+  <ion-card-header tappable > 
+{{recurso.nombre}}
+<ion-button (click)="verInfo()">
+  <ion-label *ngIf="!info">
+    editar
+  </ion-label>
+  <ion-label *ngIf="info">
+no editar
+  </ion-label>
+</ion-button>
+  </ion-card-header>
+  <ion-card-content *ngIf="info">
+    <ion-input [(ngModel)]="recurso.nombre">
+        
+    </ion-input>
+    <ion-input [(ngModel)]="recurso.tipo">
+      
+    </ion-input>
+    <ion-button (click)="editarRecurso()">
+      Guardar
+    </ion-button>
+    <ion-button (click)="eliminarRecursos()">
+      Eliminar
+    </ion-button>
+  </ion-card-content>
+     
+</ion-card>

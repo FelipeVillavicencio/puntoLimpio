@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { RecursosPageRoutingModule } from './recursos-routing.module';
 
 import { RecursosPage } from './recursos.page';
+import { ListaComponent } from './lista/lista.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { RecursosPage } from './recursos.page';
     IonicModule,
     RecursosPageRoutingModule
   ],
-  declarations: [RecursosPage]
+  declarations: [RecursosPage, ListaComponent]
 })
 export class RecursosPageModule {}
