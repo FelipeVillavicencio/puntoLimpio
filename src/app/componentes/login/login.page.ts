@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
   }
 
   onSubmitLogin(){
-    if(this.email=="Admin@Admin.com"){
+    if(this.email=="admin@admin.com"){
     this.authService.login(this.email,this.password).then(res=>{
       this.router.navigate(['principal'])
     }).catch(err => this.presentAlert());

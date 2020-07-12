@@ -3,6 +3,7 @@ import { evento } from "src/app/Model/evento.interface";
 import { AuthService } from "src/app/servicios/auth.service";
 import {ActivatedRoute} from "@angular/router";
 import { NavController,LoadingController } from "@ionic/angular";
+import { FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-crudevento',
@@ -18,7 +19,11 @@ export class CRUDeventoPage implements OnInit {
     hora:''
   };
   eventoId=null;
-  constructor(private route:ActivatedRoute,private nav:NavController, private authService:AuthService, private loadingController:LoadingController) { }
+  
+  constructor(private route:ActivatedRoute,private nav:NavController, private authService:AuthService, private loadingController:LoadingController) { 
+   
+   }
+  
 
   ngOnInit() {
     this.eventoId=this.route.snapshot.params['id'];
