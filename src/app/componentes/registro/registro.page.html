@@ -6,7 +6,7 @@
 <ion-content class="ion-padding ">
   <form [formGroup]="myForm" (ngSubmit)="onSubmitRegistro()" novalidate>
     <ion-item>
-      <ion-label position="stacked"> Nombre <span class="text-danger">*</span></ion-label>
+      <ion-label position="floating"> Nombre <span class="text-danger">*</span></ion-label>
       <ion-input formControlName="Nombre" type="text" placeholder="" [(ngModel)]="Nombre"></ion-input>
     </ion-item>
     <ion-item *ngIf="myForm.get('Nombre').errors && myForm.get('Nombre').dirty">
@@ -61,12 +61,12 @@
     <div id="container">
       <ion-row>
         <ion-col class="ion-text-center">
-          <ion-button class="primario" type="submit" [disabled]="!myForm.valid">Registrarse</ion-button>
+          <ion-button fill="solid" shape="round" expand="block" type="submit" [disabled]="!myForm.valid">Registrarse</ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col class="ion-text-center">
-          <ion-button class="secundario" href="login">Tengo Cuenta</ion-button>
+          <ion-button fill="solid" shape="round" expand="block"  href="login">Tengo Cuenta</ion-button>
         </ion-col>
       </ion-row>
     </div>

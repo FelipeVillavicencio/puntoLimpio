@@ -17,9 +17,21 @@ cargarRecurso(recurso){
     uso : recurso.uso
    };
   if (recurso.id) {
-return this.aFire.collection('recursos').doc(recurso.id).set(recursoPost,{merge : true});
+return this.aFire.collection('recursos').doc(recurso.id).set(recursoPost,{merge : true}).then(()=>{
+  Swal.fire(
+    'Editado exitosamente',
+    `${recursoPost.nombre} `,
+    'success'
+  )
+} );
    }
-  return this.aFire.collection('recursos').add(recursoPost);
+  return this.aFire.collection('recursos').add(recursoPost).then(()=>{
+    Swal.fire(
+      'Se ha guardado exitosamente',
+      '',
+      'success'
+    )
+  } );
 }
 
 obtenerRecursos(){

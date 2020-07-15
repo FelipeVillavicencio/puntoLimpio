@@ -15,5 +15,8 @@ export class PrincipalUserPage implements OnInit {
     this.authservice.Mostrar().subscribe(user => {
       this.email=user.email})
   }
+  logout(){
+    this.authservice.logout();
+  }
 
 }

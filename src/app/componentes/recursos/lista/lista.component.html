@@ -17,12 +17,22 @@ no editar
     <ion-input [(ngModel)]="recurso.tipo">
       
     </ion-input>
-    <ion-button (click)="editarRecurso()">
-      Guardar
-    </ion-button>
-    <ion-button (click)="eliminarRecursos()">
-      Eliminar
-    </ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button fill="solid" shape="round" expand="block" (click)="editarRecurso()">
+            Guardar
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button fill="solid" shape="round" expand="block" (click)="eliminarRecursos()">
+            Eliminar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
+   
   </ion-card-content>
      
 </ion-card>

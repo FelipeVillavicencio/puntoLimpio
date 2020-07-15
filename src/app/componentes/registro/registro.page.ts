@@ -57,7 +57,7 @@ export class RegistroPage implements OnInit {
   onSubmitRegistro(){
     if(this.password==this.Cpassword){
       this.auth.register(this.email,this.password,this.Nombre,this.Apellido).then(auth =>{
-        this.router.navigate(['principal'])
+        this.router.navigate(['login'])
         
       }).catch(err =>  this.presentAlert())
   

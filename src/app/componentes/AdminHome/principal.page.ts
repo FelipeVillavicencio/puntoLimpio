@@ -19,5 +19,8 @@ export class PrincipalPage implements OnInit {
     })
     
   }
+  logout(){
+    this.authservice.logout();
+  }
 
 }
