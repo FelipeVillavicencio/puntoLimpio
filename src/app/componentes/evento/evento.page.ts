@@ -8,6 +8,7 @@ import { AuthService } from "src/app/servicios/auth.service";
   styleUrls: ['./evento.page.scss'],
 })
 export class EventoPage implements OnInit {
+  titulo= "eventos";
   eventos :evento[];
 
   constructor(private authService:AuthService) { }

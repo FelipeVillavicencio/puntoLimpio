@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { PrincipalPageRoutingModule } from './principal-routing.module';
-
 import { PrincipalPage } from './principal.page';
+import { HeaderComponent } from '../header/header.component';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { PrincipalPage } from './principal.page';
     IonicModule,
     PrincipalPageRoutingModule
   ],
-  declarations: [PrincipalPage]
+  declarations: [PrincipalPage,HeaderComponent]
 })
 export class PrincipalPageModule {}

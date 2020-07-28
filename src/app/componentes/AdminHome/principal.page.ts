@@ -8,6 +8,7 @@ import { AuthService } from "src/app/servicios/auth.service";
 })
 export class PrincipalPage implements OnInit {
 
+  titulo= "Administrador";
   email:string;
 
   constructor(private authservice:AuthService) { }

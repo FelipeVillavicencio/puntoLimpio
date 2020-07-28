@@ -1,0 +1,16 @@
+<ion-app>
+  <ion-menu *ngIf="verContenido" side="start" menuId="primerMenu" contentId="menu1">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu principal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+     
+      <ion-item *ngFor="let ruta of rutas" [routerLink]="ruta.routerlink" routerLinkActive="active">
+        <ion-icon [name]="ruta.icon"></ion-icon> {{ruta.titulo}}
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="menu1"></ion-router-outlet>
+</ion-app>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+titulo= "Punto Limpio";
+  constructor(private menuCtrl: MenuController) {}
 
-  constructor() {}
 
+  abrirMenu(){
+this.menuCtrl.toggle();
+  }
 }

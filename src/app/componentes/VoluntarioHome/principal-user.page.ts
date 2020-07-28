@@ -7,6 +7,7 @@ import { AuthService } from "src/app/servicios/auth.service";
   styleUrls: ['./principal-user.page.scss'],
 })
 export class PrincipalUserPage implements OnInit {
+  titulo= "Voluntario";
   email:string;
 
   constructor(private authservice:AuthService) { }

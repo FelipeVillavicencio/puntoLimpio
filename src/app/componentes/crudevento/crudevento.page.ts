@@ -11,12 +11,14 @@ import { FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
   styleUrls: ['./crudevento.page.scss'],
 })
 export class CRUDeventoPage implements OnInit {
-  evento:evento={
+  titulo= "Crear Evento";
+  evento ={
     Nombre:'',
     Lugar:'',
     fecha:'',
     desc:'',
-    hora:''
+    hora:'',
+    inscripciones: []
   };
   eventoId=null;
   

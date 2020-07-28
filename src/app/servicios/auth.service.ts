@@ -12,6 +12,7 @@ import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 import { evento } from "src/app/Model/evento.interface";
 import { Action } from 'rxjs/internal/scheduler/Action';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +21,11 @@ export class AuthService {
 
   private eventosCollection:AngularFirestoreCollection<evento>;
   private eventos:Observable<evento[]>
+  public userData: Observable<firebase.User>;
+  public userinfo: firebase.User = null;
 
-  constructor(private AFauth : AngularFireAuth,private router:Router, private db: AngularFirestore,public platform: Platform ,private db1:AngularFirestore) { 
-    this.eventosCollection=db1.collection<evento>('eventos');
+  constructor(private AFauth : AngularFireAuth,private router:Router, private db: AngularFirestore,public platform: Platform) { 
+    this.eventosCollection=db.collection<evento>('eventos');
     this.eventos = this.eventosCollection.snapshotChanges().pipe(map(
       actions =>{
         return actions.map(a=>{
@@ -32,6 +35,15 @@ export class AuthService {
         });
       }
     ));
+    this.userData = AFauth.authState;
+    this.userData.subscribe((userData) => {
+      if (userData) {
+          this.userinfo = userData;
+          console.log(userData);
+        } else {
+          this.userinfo = null;
+        }
+      });
   }
   
   getEventos(){
@@ -39,6 +51,22 @@ export class AuthService {
   }
   getEvento(id:string){
     return this.eventosCollection.doc<evento>(id).valueChanges();
+  }
+  obtenerevento(){
+    return this.db.collection('eventos').snapshotChanges();
+  }
+  obtenerUsuario(id){
+    return this.db.collection('usuario').doc( id ).valueChanges();
+  }
+  inscribirse(id, nombre){
+    //const data= {
+      //inscripciones: firebase.firestore.FieldValue.arrayUnion(nombre)
+    //}
+    this.db.doc(`eventos/${ id }`).update( {
+      inscripciones: firebase.firestore.FieldValue.arrayUnion(nombre)
+    }
+      
+    );
   }
 
   updateEvento(evento:evento, id:string){
@@ -86,5 +114,8 @@ export class AuthService {
   }
   Mostrar(){
     return this.AFauth.authState
+  }
+  esAdmin(id){
+   return this.db.collection('usuario')
   }
 }

@@ -7,6 +7,7 @@ import { RecursosService } from 'src/app/servicios/recursos.service';
   styleUrls: ['./crudrecurso.page.scss'],
 })
 export class CrudrecursoPage implements OnInit {
+  titulo= "Crear recurso";
   recurso = {
           nombre: '',
           tipo: '',

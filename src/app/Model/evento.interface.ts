@@ -5,4 +5,5 @@ export interface evento{
     fecha:string;
     desc:string;
     hora:string;
+    inscripciones: any ;
 }

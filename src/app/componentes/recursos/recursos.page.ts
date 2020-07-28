@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./recursos.page.scss'],
 })
 export class RecursosPage implements OnInit {
+  titulo= "Recursos";
 recursos = [];
   constructor(private recursoS: RecursosService) { }
 
