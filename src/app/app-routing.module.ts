@@ -64,11 +64,7 @@ const routes: Routes = [
  {
  path: 'registro',
  loadChildren: () => import('./componentes/registro/registro.module').then( m => m.RegistroPageModule)
- },  {
-    path: 'perfiles',
-    loadChildren: () => import('./perfiles/perfiles.module').then( m => m.PerfilesPageModule)
-  }
-
+ }
  
 
 
