@@ -10,10 +10,12 @@ import { MenuController } from '@ionic/angular';
 })
 export class MenuComponent implements OnInit {
 admin = false;
-usuario = false;
-verContenido= true;
+usuario ;
+verContenido= false;
 rutas = [];
-
+email ;
+inscripciones = {};
+id ;
 private rutasAdmin = [
   {
     routerlink : '/principal',
@@ -59,15 +61,15 @@ private rutasUsuario = [
               private menu: MenuController) { }
 
   ngOnInit() {
-    this.esAdmin();
+    this.cargarUser();
   }
 
   esAdmin(){
-    if(this.Auth.userinfo.email== 'admin@admin.com'){
-      this.admin= true;
+    if(this.Auth.userinfo.email== 'chino@gmail.com'){
+      this.verContenido = true ;  
       this.rutas = this.rutasAdmin;
     }else{
-      this.usuario= true;
+      this.verContenido = true ;  
       this.rutas = this.rutasUsuario;
     }
   }
@@ -81,5 +83,19 @@ private rutasUsuario = [
 
   irEvento() {
     this.router.navigate(['/evento']);
+  }
+  cargarUser() {
+    this.Auth.userData.subscribe((userData) => {
+      this.id = userData.uid;
+      this.obteneruser();
+    });
+  }
+  async obteneruser() {
+    this.Auth.obtenerUsuario(this.id).subscribe(usuario => {
+      this.usuario = usuario;
+      this.email = this.usuario.email;
+      console.log (this.email);
+      this.esAdmin();
+    });
   }
 }

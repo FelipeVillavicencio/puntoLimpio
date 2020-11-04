@@ -35,6 +35,5 @@ async obteneruser() {
     this.nombre = this.usuario.Nombre;
     console.log (this.nombre);
   });
- 6
 }
 }
