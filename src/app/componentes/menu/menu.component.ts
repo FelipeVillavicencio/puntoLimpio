@@ -41,14 +41,9 @@ private rutasUsuario = [
     titulo : 'inscribirse'
   },
   {
-    routerlink : '/alumno',
-    icon : 'people-outline',
-    titulo : 'Rutinas'
-  },
-  {
-    routerlink : '/complete-datos',
+    routerlink : '/perfiles',
     icon : 'person-outline',
-    titulo : 'Perfil'
+    titulo : 'Mis Datos'
   },
   {
     routerlink : '/lista-mensajes',

@@ -118,4 +118,12 @@ export class AuthService {
   esAdmin(id){
    return this.db.collection('usuario')
   }
+  actualizarPerfil(id, nombre, apellido){
+
+    const data= {
+      Nombre: nombre,
+      Apellido: apellido
+    }
+    this.db.doc(`usuario/${ id }`).set( data, {merge: true });
+  }
 }
