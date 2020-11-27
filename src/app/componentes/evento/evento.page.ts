@@ -11,6 +11,12 @@ export class EventoPage implements OnInit {
   titulo= "eventos";
   eventos :evento[];
 
+  inscritos=[
+    'jose',
+    'andres',
+    'gory'
+  ]
+
   constructor(private authService:AuthService) { }
 
   ngOnInit() {

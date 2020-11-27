@@ -1,5 +1,5 @@
-<app-header-volver [titulo]="titulo" >
-  
+<!--app-header-volver [titulo]="titulo" >
+
 </app-header-volver>
 
 <ion-content padding>
@@ -22,4 +22,55 @@
     <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  
+</ion-content-->
+
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <ion-card class="ion-margin-bottom">
+      <ion-img src="./../../../assets/ejemplo.jpg"></ion-img>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ion-margin-bottom">
+            <ion-card-title>Titulo</ion-card-title>
+            <ion-card-subtitle>Fecha</ion-card-subtitle>
+          </ion-col>
+          <ion-col size="12" class="ion-text-center ">
+            <ion-button fill="clear" color="dark">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+              Suscribirse
+            </ion-button>
+          </ion-col>
+          
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <h6>Descripción</h6>
+    <ion-item lines="none">
+      <ion-textarea>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem sequi odit delectus explicabo nobis eius magni eaque fuga doloremque et ut sunt repellat suscipit quaerat, nesciunt alias porro. Corporis, provident.
+      </ion-textarea>
+    </ion-item>
+    <h6>Suscritos</h6>
+    <ion-item *ngFor="let inscrito of inscritos" lines="none">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label>
+        {{inscrito}}
+      </ion-label>
+    </ion-item>
+  </div>
 </ion-content>
+<div class="ion-padding">
+  <ion-badge color="dark" mode="ios">
+    ComediaFest 
+  </ion-badge>
+</div>

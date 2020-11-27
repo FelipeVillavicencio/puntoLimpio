@@ -15,7 +15,7 @@ export class CRUDeventoPage implements OnInit {
   evento ={
     Nombre:'',
     Lugar:'',
-    fecha:'',
+    Fecha:'',
     desc:'',
     hora:'',
     inscripciones: []

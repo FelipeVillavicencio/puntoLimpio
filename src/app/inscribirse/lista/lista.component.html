@@ -1,25 +1,79 @@
 
 
+<!--ion-slides>
+  <ion-slide>
+    <ion-card class="card">
+      <ion-card-header>
+        <img src="./../../../assets/ejemplo.jpg" alt="">
+        <ion-card-title class="title">{{evento.Nombre}}</ion-card-title>
+        <ion-card-subtitle class="title-sub">{{evento.Lugar}}</ion-card-subtitle>
+        <ion-buttons class="card-menu-item-1">
+          <ion-button *ngIf="!card" expand="full" class="ion-no-margin" (click)="verCard()"> <ion-icon name="chevron-back-outline"></ion-icon> Ver Más</ion-button>
+        </ion-buttons>
+      </ion-card-header>
+    </ion-card>
+  </ion-slide>
 
 
+  <ion-slide>
+    <ion-card>
 
-
-
-
-<ion-card>
-<ion-card-header>
-  {{evento.Nombre}}
-</ion-card-header>
-<ion-card-content>
-  <ion-button (click)="inscribirse()">
-    suscribirse
-  </ion-button>
-  <ion-item *ngFor="let inscripcion of evento.inscripciones; let i=index">
-    <ion-label >
-      {{i+1}}.-{{inscripcion}}
+      <h1>Descripción</h1>
+      <p>
+        {{evento.Desc}}
+      </p>
       
-    </ion-label>
-  </ion-item>
-</ion-card-content>
-</ion-card>
+      <ion-item *ngFor="let inscripcion of evento.inscripciones; let i=index">
+        <ion-label >
+          {{i+1}}.-{{inscripcion}}
+        </ion-label>
+      </ion-item>
+      <ion-button expand="full" class="ion-no-margin" (click)="inscribirse()">
+        suscribirse
+      </ion-button>
+    </ion-card>
+  </ion-slide>
+</ion-slides>
+
+<ion-card-->
+
+
+  <ion-card >
+    <ion-card-header>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="6">
+          <ion-badge color="warning" mode="ios">
+            <ion-icon name="star"></ion-icon>
+            4.5
+          </ion-badge>
+        </ion-col>
+        <ion-col size="6" class="ion-text-right">
+          <ion-card-subtitle color="success">10 suscritos</ion-card-subtitle>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img class="img" src="./../../../assets/ejemplo.jpg"></ion-img>
+      <ion-row>
+        <ion-col size="8">
+          <ion-card-title>{{evento.Nombre}}</ion-card-title>
+          <ion-card-subtitle>{{evento.Fecha}}</ion-card-subtitle>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <ion-button fill="clear" color="dark" size="large" routerLink="/evento">
+            <ion-icon slot="icon-only" name="chevron-forward-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  
+
+
+
+  
+
+
+
+
 

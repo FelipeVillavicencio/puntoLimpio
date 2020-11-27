@@ -8,6 +8,8 @@ import { InscribirsePageRoutingModule } from './inscribirse-routing.module';
 
 import { InscribirsePage } from './inscribirse.page';
 import { ListaComponent } from './lista/lista.component';
+import { HeaderVolverComponent } from '../header-volver/header-volver.component';
+
 
 @NgModule({
   imports: [
@@ -16,6 +18,6 @@ import { ListaComponent } from './lista/lista.component';
     IonicModule,
     InscribirsePageRoutingModule
   ],
-  declarations: [InscribirsePage, ListaComponent]
+  declarations: [InscribirsePage, ListaComponent, HeaderVolverComponent]
 })
 export class InscribirsePageModule {}

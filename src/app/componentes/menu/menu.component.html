@@ -1,16 +1,32 @@
 <ion-app>
   <ion-menu *ngIf="verContenido" side="start" menuId="primerMenu" contentId="menu1">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Menu principal</ion-title>
-      </ion-toolbar>
-    </ion-header>
+    
     <ion-content>
+      <div class="menu-header-bg"></div>
+    <div class="header-content" >
+      <img src="./../../../assets/theater.svg" >
+      <ion-label>
+        <h2>ComedyFest</h2>
+      </ion-label>
+    </div>
+    <div class="action-button" >
+      <ion-button ><ion-icon slot="start" name="calendar-outline"></ion-icon> Ver Eventos</ion-button>
+    </div>
+
+      <ion-list lines="none" class="menu-items">
      
       <ion-item *ngFor="let ruta of rutas" [routerLink]="ruta.routerlink" routerLinkActive="active">
         <ion-icon [name]="ruta.icon"></ion-icon> {{ruta.titulo}}
       </ion-item>
+      <ion-item >
+        <ion-icon name="exit-outline" color="danger"></ion-icon> <ion-label color="danger">Cerrar Sesión</ion-label> 
+      </ion-item>
+    </ion-list>
     </ion-content>
   </ion-menu>
+
+
+
+
   <ion-router-outlet id="menu1"></ion-router-outlet>
 </ion-app>

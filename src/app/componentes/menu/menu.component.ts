@@ -18,12 +18,12 @@ inscripciones = {};
 id ;
 private rutasAdmin = [
   {
-    routerlink : '/principal',
+    routerlink : '/principal', // ambos pero separar admin 
     icon : 'home-outline',
     titulo : 'Inicio'
   },
   {
-    routerlink : '/crudevento',
+    routerlink : '/crudevento', // arreglar y agregar lista de eventos 
     icon : 'barbell-outline',
     titulo : 'Crear eventos'
   },
@@ -35,6 +35,11 @@ private rutasAdmin = [
 ];
 
 private rutasUsuario = [
+  {
+    routerlink : '/principal', // ambos 
+    icon : 'home-outline',
+    titulo : 'Inicio'
+  },
   {
     routerlink : '/inscribirse',
     icon : 'home-outline',

@@ -9,6 +9,7 @@ import { AuthService } from "src/app/servicios/auth.service";
 export class InscribirsePage implements OnInit {
   titulo= "Inscribirse";
   eventos = [];
+  resultado = 0;
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
@@ -20,9 +21,9 @@ export class InscribirsePage implements OnInit {
       recursoSnap.forEach(eventoData =>{
         const id = eventoData.payload.doc.id;
         const data = eventoData.payload.doc.data() as any;
+        this.resultado++;
         this.eventos.push({id, ...data});
         console.log(this.eventos);
-        
       });
     });
   }

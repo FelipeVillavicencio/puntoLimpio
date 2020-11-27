@@ -13,6 +13,7 @@ export class ListaComponent implements OnInit {
            inscripciones = {};
            id ;
            usuario ;
+           card = false;
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
@@ -23,6 +24,11 @@ inscribirse(){
 this.auth.inscribirse(this.evento.id,this.nombre);
 
 }
+
+verCard(){
+  this.card = !this.card;
+}
+
 cargarUser() {
   this.auth.userData.subscribe((userData) => {
     this.id = userData.uid;

@@ -14,10 +14,15 @@ export class LoginPage implements OnInit {
   
   email:string;
   password:string;
+  signupView: boolean = false
 
   constructor(private authService:AuthService, public router: Router, public alerta: AlertController) { 
    
     
+  }
+
+  toggleSignUpView () {
+    this.signupView = !this.signupView
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');

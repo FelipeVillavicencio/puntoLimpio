@@ -1,39 +1,128 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">Iniciar sesión</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 
-<ion-content class="ion-padding " >
- 
-  <form autocomplete="off">
-    <ion-item>
-      <ion-label position="stacked" > Correo electrónico <span class="text-danger">*</span></ion-label>
-      <ion-input type="text" [(ngModel)]="email" name="email" required="true" maxlength="30" minlength="6"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked" > Contraseña <span class="text-danger">*</span></ion-label>
-      <ion-input [(ngModel)]="password" type="password" name="password" required="true"maxlength="30"minlength="6"></ion-input>
+<!--ion-content class="ion-padding " >
+  <div class="content">
+
+    <form autocomplete="off">
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="text" [(ngModel)]="email"  name="email" required="true" maxlength="30" minlength="6"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" > Contraseña <span class="text-danger">*</span></ion-label>
+        <ion-input [(ngModel)]="password" type="password" name="password" required="true"maxlength="30"minlength="6"></ion-input>  
+      </ion-item>
       
-    </ion-item>
-    <div class="ion-text-center ion-margin-top">
-      <a routerLink=""><small>Cambiar Contraseña</small></a>
+      <p>
+        <div id="container">
+          <ion-row>
+            <ion-col class="ion-text-center"> 
+              <ion-button 
+              fill="solid"
+              shape="round"
+              expand="block"
+              (click)="onSubmitLogin()"
+              type="submit">Entrar</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-text-center"> <ion-button fill="solid" shape="round" expand="block" href="registro">Registrarse</ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </form>
+      <div class="ion-text-center ion-margin-top">
+        <a routerLink=""><small>Recuperar Contraseña</small></a>
+      </div>
+      
+      <div class="ion-text-center ion-margin-top">
+        <a routerLink=""><small>Cambiar Contraseña</small></a>
+      </div>
     </div>
-    <p>
-    <div id="container">
-      <ion-row>
-        <ion-col class="ion-text-center"> 
-          <ion-button fill="solid" shape="round" expand="block" (click)="onSubmitLogin()" type="submit">Entrar</ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="ion-text-center"> <ion-button fill="solid" shape="round" expand="block" href="registro">Registrarse</ion-button>
-        </ion-col>
-      </ion-row>
-  </div>
-  </form>
-  <div class="ion-text-center ion-margin-top">
-    <a routerLink=""><small>Recuperar Contraseña</small></a>
-  </div>
-</ion-content>
+    </ion-content-->
+
+    <ion-content>
+      <div class="sign-container gradient-1">
+    
+        <div class="header">
+          <div class="title ion-text-center">
+            <img src="./../../../assets/theater.svg" alt="">
+          </div>
+        </div>
+    
+        <div class="login-container">
+    
+          <ion-list lines="none" class="form fade-in">
+            <ion-item>
+              <ion-label>Correo</ion-label>
+              <ion-input type="text" [(ngModel)]="email"  name="email" required="true" maxlength="30" minlength="6" class="ion-text-right"></ion-input>
+              <ion-icon slot="end" name="at"></ion-icon>
+            </ion-item>
+            <ion-item>
+              <ion-label>Contraseña</ion-label>
+              <ion-input [(ngModel)]="password" type="password" name="password" required="true"maxlength="30"minlength="6" class="ion-text-right"></ion-input>
+              <ion-icon slot="end" name="lock"></ion-icon>
+            </ion-item>
+          </ion-list>
+    
+          <div class="ion-text-center fade-in">
+            <ion-button class="green-button" (click)="onSubmitLogin()">
+              Iniciar Sesión
+            </ion-button>
+          </div>
+    
+        </div>
+    
+        <div class="sign-up-container gradient-2" [ngClass]="{'active': signupView}">
+    
+          <div class="toggle-text ion-text-center" tappable (click)="toggleSignUpView()">
+    
+            <span *ngIf="!signupView" [ngClass]="{'fade-in': !signupView, 'fade-out': signupView}">Registrarse</span>
+            <span *ngIf="signupView" [ngClass]="{'fade-in': signupView, 'fade-out': !signupView}">Iniciar Sesión</span>
+            <br>
+            <ion-icon name="arrow-round-up" *ngIf="!signupView" [ngClass]="{'fade-in': !signupView, 'fade-out': signupView}"></ion-icon>
+            <ion-icon name="arrow-round-down" *ngIf="signupView" [ngClass]="{'fade-in': signupView, 'fade-out': !signupView}"></ion-icon>
+    
+          </div>
+    
+          <ion-list lines="none" class="form" [ngClass]="{'fade-in': signupView, 'fade-out': !signupView}">
+            <ion-item>
+              <ion-label>Nombre</ion-label>
+              <ion-input class="ion-text-right"></ion-input>
+              <ion-icon slot="end" name="person"></ion-icon>
+            </ion-item>
+            <ion-item>
+              <ion-label>Apellido</ion-label>
+              <ion-input class="ion-text-right"></ion-input>
+              <ion-icon slot="end" name="person"></ion-icon>
+            </ion-item>
+            <ion-item>
+              <ion-label>Correo</ion-label>
+              <ion-input class="ion-text-right"></ion-input>
+              <ion-icon slot="end" name="at"></ion-icon>
+            </ion-item>
+            <ion-item>
+              <ion-label>Contraseña</ion-label>
+              <ion-input class="ion-text-right"></ion-input>
+              <ion-icon slot="end" name="lock"></ion-icon>
+            </ion-item>
+            <ion-item>
+              <ion-label>Confirmar Contraseña</ion-label>
+              <ion-input class="ion-text-right"></ion-input>
+              <ion-icon slot="end" name="lock"></ion-icon>
+            </ion-item>
+          </ion-list>
+          
+          <div class="ion-text-center" [ngClass]="{'fade-in': signupView, 'fade-out': !signupView}">
+            <ion-button class="gray-button">
+              Registrarse
+            </ion-button>
+          </div>
+    
+        </div>
+    
+      </div>
+    </ion-content>
+
+    
