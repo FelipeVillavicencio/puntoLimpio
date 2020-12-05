@@ -10,6 +10,7 @@ export class InscribirsePage implements OnInit {
   titulo= "Inscribirse";
   eventos = [];
   resultado = 0;
+  filtrarEventos= "";
   constructor(private auth: AuthService) { }
 
   ngOnInit() {

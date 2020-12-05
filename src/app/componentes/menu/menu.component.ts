@@ -16,9 +16,10 @@ rutas = [];
 email ;
 inscripciones = {};
 id ;
+tipo;
 private rutasAdmin = [
   {
-    routerlink : '/principal', // ambos pero separar admin 
+    routerlink : '/inscribirse', // ambos pero separar admin 
     icon : 'home-outline',
     titulo : 'Inicio'
   },
@@ -28,15 +29,20 @@ private rutasAdmin = [
     titulo : 'Crear eventos'
   },
   {
-    routerlink : '/crudrecurso',
-    icon : 'flash-outline',
-    titulo : 'Crear Recursos'
-  }
+    routerlink : '/perfiles',
+    icon : 'person-outline',
+    titulo : 'Mis Datos'
+  },
+  {
+    routerlink : '/misEventos',//crear componente completo
+    icon : 'person-outline',
+    titulo : 'Mis Eventos'
+  },
 ];
 
 private rutasUsuario = [
   {
-    routerlink : '/principal', // ambos 
+    routerlink : '/inscribirse', // ambos 
     icon : 'home-outline',
     titulo : 'Inicio'
   },
@@ -65,12 +71,12 @@ private rutasUsuario = [
   }
 
   esAdmin(){
-    if(this.Auth.userinfo.email== 'chino@gmail.com'){
-      this.verContenido = true ;  
+    if(this.tipo== 'Organizador'){
       this.rutas = this.rutasAdmin;
-    }else{
       this.verContenido = true ;  
+    }else{
       this.rutas = this.rutasUsuario;
+      this.verContenido = true ;
     }
   }
   salir() {
@@ -87,14 +93,15 @@ private rutasUsuario = [
   cargarUser() {
     this.Auth.userData.subscribe((userData) => {
       this.id = userData.uid;
+      console.log (userData);
       this.obteneruser();
     });
   }
   async obteneruser() {
     this.Auth.obtenerUsuario(this.id).subscribe(usuario => {
       this.usuario = usuario;
-      this.email = this.usuario.email;
-      console.log (this.email);
+      console.log (usuario);
+      this.tipo = this.usuario.Tipo;
       this.esAdmin();
     });
   }

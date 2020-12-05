@@ -13,11 +13,12 @@ import { FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 export class CRUDeventoPage implements OnInit {
   titulo= "Crear Evento";
   evento ={
-    Nombre:'',
-    Lugar:'',
-    Fecha:'',
+    nombre:'',
+    lugar:'',
+    fecha:'',
     desc:'',
     hora:'',
+    precio: '',
     inscripciones: []
   };
   eventoId=null;

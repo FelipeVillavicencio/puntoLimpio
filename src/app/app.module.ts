@@ -15,8 +15,9 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { MenuComponent } from './componentes/menu/menu.component';
 
+
 @NgModule({
-  declarations: [AppComponent,MenuComponent],
+  declarations: [AppComponent,MenuComponent ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
   AngularFireModule.initializeApp(firebaseConfig),AngularFirestoreModule],

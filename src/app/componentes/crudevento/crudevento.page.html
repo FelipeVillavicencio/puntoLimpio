@@ -57,6 +57,14 @@
       </ion-label>
     </ion-item>
 
+    <h6>Precio</h6>
+    <ion-item lines="none">
+      <ion-icon name="location-outline" [(ngModel)]="evento.Precio" slot="start"></ion-icon>
+      <ion-label>
+        <ion-input placeholder="Precio"></ion-input>
+      </ion-label>
+    </ion-item>
+
     <h6>Fecha</h6>
     <ion-item lines="none">
       <ion-icon name="calendar-outline" slot="start"></ion-icon>
@@ -65,11 +73,11 @@
       </ion-label>
     </ion-item>
 
-    <h6>Lugar</h6>
+    <h6>Enlace</h6>
     <ion-item lines="none">
       <ion-icon name="location-outline" slot="start"></ion-icon>
       <ion-label>
-        <ion-input placeholder="Lugar" [(ngModel)]="evento.Lugar"></ion-input>
+        <ion-input placeholder="Enlace" [(ngModel)]="evento.Lugar"></ion-input>
       </ion-label>
     </ion-item>
 
@@ -88,6 +96,7 @@
         <ion-textarea placeholder="Descripción" [(ngModel)]="evento.Desc"></ion-textarea>
       </ion-label>
     </ion-item>
+    
 
       <ion-button expand="full" fill="round" color="primary" (click)="saveEvento()">Guardar</ion-button>
     

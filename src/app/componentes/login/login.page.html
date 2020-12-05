@@ -56,12 +56,12 @@
           <ion-list lines="none" class="form fade-in">
             <ion-item>
               <ion-label>Correo</ion-label>
-              <ion-input type="text" [(ngModel)]="email"  name="email" required="true" maxlength="30" minlength="6" class="ion-text-right"></ion-input>
+              <ion-input type="text" [(ngModel)]="emailL"  name="email" required="true" maxlength="30" minlength="6" class="ion-text-right"></ion-input>
               <ion-icon slot="end" name="at"></ion-icon>
             </ion-item>
             <ion-item>
               <ion-label>Contraseña</ion-label>
-              <ion-input [(ngModel)]="password" type="password" name="password" required="true"maxlength="30"minlength="6" class="ion-text-right"></ion-input>
+              <ion-input [(ngModel)]="passwordL" type="password" name="password" required="true"maxlength="30"minlength="6" class="ion-text-right"></ion-input>
               <ion-icon slot="end" name="lock"></ion-icon>
             </ion-item>
           </ion-list>
@@ -71,9 +71,10 @@
               Iniciar Sesión
             </ion-button>
           </div>
-    
+          
         </div>
-    
+        
+        <!-- <form [formGroup]="myForm" (ngSubmit)="onSubmitRegistro()" novalidate> -->
         <div class="sign-up-container gradient-2" [ngClass]="{'active': signupView}">
     
           <div class="toggle-text ion-text-center" tappable (click)="toggleSignUpView()">
@@ -85,44 +86,50 @@
             <ion-icon name="arrow-round-down" *ngIf="signupView" [ngClass]="{'fade-in': signupView, 'fade-out': !signupView}"></ion-icon>
     
           </div>
-    
           <ion-list lines="none" class="form" [ngClass]="{'fade-in': signupView, 'fade-out': !signupView}">
             <ion-item>
               <ion-label>Nombre</ion-label>
-              <ion-input class="ion-text-right"></ion-input>
+              <ion-input  class="ion-text-right" [(ngModel)]="Nombre"></ion-input>
               <ion-icon slot="end" name="person"></ion-icon>
             </ion-item>
             <ion-item>
               <ion-label>Apellido</ion-label>
-              <ion-input class="ion-text-right"></ion-input>
-              <ion-icon slot="end" name="person"></ion-icon>
+              <ion-input class="ion-text-right" [(ngModel)]="Apellido"></ion-input>
+              <ion-icon  slot="end" name="person"></ion-icon>
             </ion-item>
             <ion-item>
               <ion-label>Correo</ion-label>
-              <ion-input class="ion-text-right"></ion-input>
-              <ion-icon slot="end" name="at"></ion-icon>
+              <ion-input class="ion-text-right" [(ngModel)]="email"></ion-input>
+              <ion-icon  slot="end" name="at"></ion-icon>
             </ion-item>
             <ion-item>
               <ion-label>Contraseña</ion-label>
-              <ion-input class="ion-text-right"></ion-input>
+              <ion-input  class="ion-text-right" [(ngModel)]="password"></ion-input>
               <ion-icon slot="end" name="lock"></ion-icon>
             </ion-item>
             <ion-item>
               <ion-label>Confirmar Contraseña</ion-label>
+              <ion-input  class="ion-text-right" [(ngModel)]="Cpassword"></ion-input>
+              <ion-icon slot="end" name="lock"></ion-icon>
+            </ion-item>
+            <ion-item>
+              <ion-label>Tipo de Usuario</ion-label>
               <ion-input class="ion-text-right"></ion-input>
               <ion-icon slot="end" name="lock"></ion-icon>
             </ion-item>
           </ion-list>
           
           <div class="ion-text-center" [ngClass]="{'fade-in': signupView, 'fade-out': !signupView}">
-            <ion-button class="gray-button">
+            <ion-button class="gray-button" type="submit" [disabled]="!myForm.valid">
               Registrarse
             </ion-button>
           </div>
-    
+        
         </div>
-    
+     
+      <!-- </form> -->
       </div>
+    
     </ion-content>
 
     

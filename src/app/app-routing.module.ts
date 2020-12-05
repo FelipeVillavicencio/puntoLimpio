@@ -9,13 +9,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'inscribirse',
         pathMatch: 'full'
       },
-      {
-        path: 'home',
-        loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-      },
+    
       {
         path: 'principal',
         loadChildren: () => import('./componentes/AdminHome/principal.module').then( m => m.PrincipalPageModule)
@@ -48,29 +45,26 @@ const routes: Routes = [
         path: 'inscribirse',
         loadChildren: () => import('./inscribirse/inscribirse.module').then( m => m.InscribirsePageModule)
       },
+      {
+        path: 'perfiles',
+        loadChildren: () => import('./perfiles/perfiles.module').then( m => m.PerfilesPageModule)
+      }
     ]
 
-  },
-
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
   },
  {
  path: 'login',
  loadChildren: () => import('./componentes/login/login.module').then( m => m.LoginPageModule)
  },
  {
+  path: 'home',
+  loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+},
+ {
  path: 'registro',
  loadChildren: () => import('./componentes/registro/registro.module').then( m => m.RegistroPageModule)
- },  {
-    path: 'perfiles',
-    loadChildren: () => import('./perfiles/perfiles.module').then( m => m.PerfilesPageModule)
-  }
-
- 
-
+ },
+  
 
 ];
 
